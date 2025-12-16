@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GoORMHelperCache">
+    <option name="schemaMapping">
+      <map>
+        <entry key="BrowserConfig">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ChatCompletionChunk">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/openai.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ChatCompletionRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/openai.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ChatCompletionResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/openai.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Choice">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/openai.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ChunkChoice">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/openai.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Config">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ContentBlock">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/anthropic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CursorChatRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/browser/browser.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CursorContext">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/browser/browser.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CursorMessage">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/browser/browser.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CursorPart">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/browser/browser.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CursorSSEEvent">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/anthropic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Message">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/anthropic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MessagesRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/anthropic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MessagesResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/anthropic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Model">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/models.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ModelsResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/models.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OpenAIMessage">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/openai.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OpenAIUsage">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/openai.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Service">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/browser/browser.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Usage">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/internal/handler/anthropic.go" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="scannedPathMapping">
+      <map>
+        <entry key="file://$PROJECT_DIR$/cmd/server/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1765884934000" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/browser/browser.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1765885448000" />
+              <option name="schema">
+                <list>
+                  <option value="Service" />
+                  <option value="CursorChatRequest" />
+                  <option value="CursorContext" />
+                  <option value="CursorMessage" />
+                  <option value="CursorPart" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/config/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1765885080000" />
+              <option name="schema">
+                <list>
+                  <option value="Config" />
+                  <option value="BrowserConfig" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/handler/anthropic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1765885633000" />
+              <option name="schema">
+                <list>
+                  <option value="MessagesRequest" />
+                  <option value="Message" />
+                  <option value="MessagesResponse" />
+                  <option value="ContentBlock" />
+                  <option value="Usage" />
+                  <option value="CursorSSEEvent" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/handler/models.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1765884916000" />
+              <option name="schema">
+                <list>
+                  <option value="Model" />
+                  <option value="ModelsResponse" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/internal/handler/openai.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1765885479000" />
+              <option name="schema">
+                <list>
+                  <option value="ChatCompletionRequest" />
+                  <option value="OpenAIMessage" />
+                  <option value="ChatCompletionResponse" />
+                  <option value="Choice" />
+                  <option value="OpenAIUsage" />
+                  <option value="ChatCompletionChunk" />
+                  <option value="ChunkChoice" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableStructMapping">
+      <map>
+        <entry key="browser_config" value="BrowserConfig" />
+        <entry key="chat_completion_chunk" value="ChatCompletionChunk" />
+        <entry key="chat_completion_request" value="ChatCompletionRequest" />
+        <entry key="chat_completion_response" value="ChatCompletionResponse" />
+        <entry key="choice" value="Choice" />
+        <entry key="chunk_choice" value="ChunkChoice" />
+        <entry key="config" value="Config" />
+        <entry key="content_block" value="ContentBlock" />
+        <entry key="cursor_chat_request" value="CursorChatRequest" />
+        <entry key="cursor_context" value="CursorContext" />
+        <entry key="cursor_message" value="CursorMessage" />
+        <entry key="cursor_part" value="CursorPart" />
+        <entry key="cursor_sse_event" value="CursorSSEEvent" />
+        <entry key="message" value="Message" />
+        <entry key="messages_request" value="MessagesRequest" />
+        <entry key="messages_response" value="MessagesResponse" />
+        <entry key="model" value="Model" />
+        <entry key="models_response" value="ModelsResponse" />
+        <entry key="open_ai_message" value="OpenAIMessage" />
+        <entry key="open_ai_usage" value="OpenAIUsage" />
+        <entry key="service" value="Service" />
+        <entry key="usage" value="Usage" />
+      </map>
+    </option>
+    <option name="lastTimeChecked" value="1765886014493" />
+  </component>
+</project>

@@ -52,7 +52,6 @@ func (s *Service) init() {
 
 	// 配置浏览器启动参数
 	l := launcher.New().
-		Bin(cfg.Browser.Path).
 		Headless(cfg.Browser.Headless).
 		Set("disable-blink-features", "AutomationControlled"). // 隐藏自动化特征
 		Set("no-sandbox").
@@ -60,6 +59,11 @@ func (s *Service) init() {
 		Set("disable-dev-shm-usage").
 		Set("no-proxy-server"). // 浏览器不使用代理
 		UserDataDir(userDataDir)
+
+	// 如果指定了浏览器路径，则使用指定路径；否则让 go-rod 自动下载
+	if cfg.Browser.Path != "" {
+		l = l.Bin(cfg.Browser.Path)
+	}
 
 	u := l.MustLaunch()
 

@@ -50,6 +50,50 @@ go build -o cursor2api ./cmd/server
 
 服务默认运行在 `http://localhost:3010`
 
+## 浏览器安装
+
+程序需要 Chromium 内核浏览器。有以下几种方式：
+
+### 方式 1: 自动下载 (推荐)
+
+保持 `config.yaml` 中 `browser.path` 为空，程序会：
+1. 首先自动检测系统已安装的 Chrome/Chromium/Edge
+2. 如果未找到，则自动下载 Chromium 到 `~/.cache/rod/browser/`
+
+### 方式 2: 使用安装脚本
+
+```bash
+# 运行安装脚本
+./scripts/setup-browser.sh
+```
+
+### 方式 3: 手动安装
+
+**macOS:**
+```bash
+brew install --cask chromium
+# 或
+brew install --cask google-chrome
+```
+
+**Linux (Debian/Ubuntu):**
+```bash
+sudo apt-get update && sudo apt-get install -y chromium-browser
+```
+
+**Linux (Alpine):**
+```bash
+apk add --no-cache chromium
+```
+
+### 方式 4: 使用环境变量
+
+```bash
+# 指定浏览器路径
+export BROWSER_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+./cursor2api
+```
+
 ## 配置
 
 编辑 `config.yaml`：
@@ -61,10 +105,13 @@ port: 3010
 # 浏览器设置
 browser:
   headless: true
-  path: "/usr/bin/chromium"
+  # 留空则自动检测或下载，也可手动指定路径
+  path: ""
 ```
 
-支持环境变量 `PORT` 覆盖端口配置。
+支持的环境变量：
+- `PORT` - 覆盖端口配置
+- `BROWSER_PATH` - 覆盖浏览器路径
 
 ## API 接口
 

@@ -9,4 +9,9 @@ browser:
   # 是否使用无头模式
   headless: true
   # Chromium 可执行文件路径
-  path: "/usr/bin/chromium"
+  # 留空则自动检测系统浏览器，如果都没有则自动下载 Chromium
+  # macOS 示例: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+  # Linux 示例: /usr/bin/chromium 或 /usr/bin/google-chrome
+  # Windows 示例: C:\Program Files\Google\Chrome\Application\chrome.exe
+  # 也可通过环境变量 BROWSER_PATH 设置
+  path: ""
