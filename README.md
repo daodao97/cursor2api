@@ -259,10 +259,54 @@ curl http://localhost:3010/tools/execute \
 | gpt-* | openai/gpt-5-nano |
 | gemini-* | google/gemini-2.5-flash |
 
+## MCP 服务器
+
+本项目还提供独立的 MCP (Model Context Protocol) 服务器，可供 Claude Desktop、VS Code 等支持 MCP 的客户端使用。
+
+### 编译 MCP 服务器
+
+```bash
+go build -o cursor2api-mcp ./cmd/mcp
+```
+
+### Claude Desktop 配置
+
+编辑 `~/Library/Application Support/Claude/claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "cursor2api": {
+      "command": "/path/to/cursor2api-mcp"
+    }
+  }
+}
+```
+
+### MCP 提供的工具
+
+| 工具 | 功能 |
+|------|------|
+| `bash` | 执行 bash 命令 |
+| `read_file` | 读取文件内容 |
+| `write_file` | 写入文件内容 |
+| `list_dir` | 列出目录内容 |
+| `edit` | 编辑文件（查找替换）|
+
+### 测试 MCP 服务器
+
+```bash
+# 手动测试
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' | ./cursor2api-mcp
+
+# 查看可用工具
+echo '{"jsonrpc":"2.0","id":2,"method":"tools/list"}' | ./cursor2api-mcp
+```
+
 ## 依赖
 
 - Go 1.21+
-- Chromium 浏览器
+- Chromium 浏览器（API 代理模式需要）
 
 ## 免责声明
 
