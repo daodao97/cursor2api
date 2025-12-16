@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  cursor2api:
+    build: .
+    container_name: cursor2api
+    ports:
+      - "3010:3010"
+    environment:
+      - PORT=3010
+      - BROWSER_PATH=/usr/bin/chromium-browser
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+    restart: unless-stopped
+    # Chromium 需要的安全设置
+    security_opt:
+      - seccomp:unconfined
+    # 共享内存，避免 Chromium 崩溃
+    shm_size: '2gb'

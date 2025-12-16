@@ -37,6 +37,19 @@ cursor2api/
 
 ## 快速开始
 
+### Docker 部署 (推荐)
+
+```bash
+# 使用 docker-compose
+docker-compose up -d
+
+# 或者手动构建运行
+docker build -t cursor2api .
+docker run -d -p 3010:3010 --shm-size=2g cursor2api
+```
+
+### 本地运行
+
 ```bash
 # 安装依赖
 go mod tidy
