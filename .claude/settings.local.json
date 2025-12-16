@@ -1,0 +1,6 @@
+{
+  "enabledMcpjsonServers": [
+    "cursor2api"
+  ],
+  "enableAllProjectMcpServers": true
+}

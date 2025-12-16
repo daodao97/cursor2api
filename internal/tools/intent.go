@@ -1,6 +1,8 @@
 package tools
 
 import (
+	"encoding/json"
+	"fmt"
 	"regexp"
 	"strings"
 )
@@ -133,8 +135,52 @@ func DetectRefusal(response string) bool {
 	return false
 }
 
+// ToolCallFromJSON 从 JSON 格式的工具调用中提取信息
+type ToolCallFromJSON struct {
+	Tool    string `json:"tool"`
+	Path    string `json:"path"`
+	Content string `json:"content"`
+	Command string `json:"command"`
+}
+
+// ExtractToolCallFromJSON 从响应中提取 JSON 格式的工具调用
+func ExtractToolCallFromJSON(response string) *ToolCallFromJSON {
+	// 匹配 JSON 格式的工具调用
+	jsonPatterns := []*regexp.Regexp{
+		regexp.MustCompile(`\{"tool"\s*:\s*"([^"]+)"[^}]*\}`),
+	}
+
+	for _, pattern := range jsonPatterns {
+		if matches := pattern.FindString(response); matches != "" {
+			var toolCall ToolCallFromJSON
+			if err := json.Unmarshal([]byte(matches), &toolCall); err == nil && toolCall.Tool != "" {
+				return &toolCall
+			}
+		}
+	}
+	return nil
+}
+
 // ExtractCommandFromRefusal 从拒绝响应中提取建议的命令
 func ExtractCommandFromRefusal(response string) string {
+	// 首先检查是否有 JSON 格式的工具调用
+	if toolCall := ExtractToolCallFromJSON(response); toolCall != nil {
+		switch toolCall.Tool {
+		case "write_file", "write_to_file":
+			if toolCall.Path != "" && toolCall.Content != "" {
+				// 转换为 echo 命令
+				// 转义内容中的特殊字符
+				content := strings.ReplaceAll(toolCall.Content, `"`, `\"`)
+				content = strings.ReplaceAll(content, `$`, `\$`)
+				return fmt.Sprintf(`echo "%s" > "%s"`, content, toolCall.Path)
+			}
+		case "bash", "run_command":
+			if toolCall.Command != "" {
+				return toolCall.Command
+			}
+		}
+	}
+
 	// 匹配代码块中的命令
 	codeBlockRe := regexp.MustCompile("```(?:bash|sh)?\\s*\\n?([^`]+)\\n?```")
 	if matches := codeBlockRe.FindStringSubmatch(response); len(matches) > 1 {

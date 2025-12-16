@@ -1,7 +1,8 @@
 {
   "mcpServers": {
     "cursor2api": {
-      "command": "./cursor2api-mcp"
+      "command": "/Users/joyasushi/Desktop/cursor2api/cursor2api-mcp",
+      "args": []
     }
   }
 }
